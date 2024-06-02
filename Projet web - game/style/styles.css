@@ -1,0 +1,633 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('..//images/background.png');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/*les images en deplacant */
+.worrior-field {
+  width: 60px;
+  /* Ajustez cette valeur pour la largeur souhaitée */
+  height: 60px;
+  /* Ajustez cette valeur pour la hauteur souhaitée */
+  margin-right: 5px;
+  /* Ajoutez une marge pour espacer les images */
+}
+
+p {
+  display: inline-block;
+  margin: 5px;
+
+}
+
+span {
+  text-align: center;
+}
+
+/* CSS du liste d'aattente affichage */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  color: white;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+#listeBleu {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  background: linear-gradient(to bottom right, rgba(143, 203, 221, 0.6), rgba(0, 33, 71, 0.6));
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#bleuwaitinglist {
+  margin-top: 120px;
+  left: 20px;
+  background: linear-gradient(to bottom right, rgba(143, 203, 221, 0.6), rgba(0, 33, 71, 0.6));
+}
+
+/* Positionne la liste rouge en haut à droite */
+#listeRouge {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.6), rgba(71, 11, 0, 0.6));
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#redwaitinglist {
+  margin-top: 120px;
+  right: 20px;
+  background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.6), rgba(71, 11, 0, 0.6));
+}
+
+/* -------------------------------------------------------------------------------------- */
+h1 {
+  font-family: 'Poetsen One';
+  color: #fff;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Centre le texte */
+  margin: 0;
+  font-size: 60px;
+  font-style: italic;
+
+}
+
+/* CSS du liste de l'affichage du son  */
+#CutSound {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 80px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+#Moveworriors_auto {
+  position: absolute;
+  top: 90%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  background: linear-gradient(to bottom right, rgba(209, 34, 34, 0.6), rgba(1, 31, 66, 0.6));
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poetsen One';
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 20px;
+}
+
+#Moveworriors_auto:hover {
+  background-color: #0056b3;
+}
+
+#Moveworriors_auto:active {
+  background-color: #003d80;
+}
+
+#startButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 60px;
+  background: linear-gradient(to bottom right, rgba(209, 34, 34, 0.6), rgba(1, 31, 66, 0.6));
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poetsen One';
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 30px;
+}
+
+#startButton:hover {
+  background-color: #0056b3;
+}
+
+#startButton:active {
+  background-color: #003d80;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+#RedButton {
+  display: none;
+  position: absolute;
+  top: 86%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.6), rgba(71, 11, 0, 0.6));
+  /* Dégradé et transparence */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Poetsen One';
+  font-size: 23px;
+}
+
+#RedButton:hover {
+  background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.8), rgba(71, 11, 0, 0.8));
+  /* Couleur plus intense au survol */
+}
+
+#RedButton:active {
+  background: linear-gradient(to bottom right, rgba(255, 0, 0, 1), rgba(71, 11, 0, 1));
+  /* Couleur encore plus intense au clic */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+#BlueButton {
+  display: none;
+  position: absolute;
+  top: 87%;
+  left: 11%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  background: linear-gradient(to bottom right, rgba(143, 203, 221, 0.6), rgba(0, 33, 71, 0.6));
+  /* Dégradé et transparence */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Poetsen One';
+  font-size: 24px;
+
+}
+
+#BlueButton:hover {
+  background: linear-gradient(to bottom right, rgba(143, 203, 221, 0.8), rgba(0, 33, 71, 0.8));
+  /* Couleur plus intense au survol */
+}
+
+#BlueButton:active {
+  background: linear-gradient(to bottom right, rgba(143, 203, 221, 1), rgba(0, 33, 71, 1));
+  /* Couleur encore plus intense au clic */
+}
+
+/* ----------------------------------------------------------------------------- */
+.plateau {
+  display: none;
+  padding: 5px;
+  position: absolute;
+  top: 45%;
+  /* Position verticale par rapport au haut de la page */
+
+
+}
+
+.ligne {
+  display: flex;
+}
+
+.carré {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 180px;
+  /* Largeur des cases */
+  height: 290px;
+  /* Hauteur des cases */
+  margin: 5px;
+  /* Espacement entre les cases */
+  border-radius: 10px;
+  /* Coins arrondis */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.health-bar-container {
+  width: 100%;
+  background-color: #ddd;
+  border: 1px solid #000;
+  height: 10px;
+  margin-top: 5px;
+}
+
+.health-bar {
+  height: 100%;
+  background-color: #4caf50;
+}
+
+
+
+/* Case bleue */
+.bleu {
+  background-color: rgba(27, 27, 228, 0.5);
+  /* Couleur bleue transparente */
+}
+
+.bleu:hover {
+  background-color: rgba(27, 27, 228, 0.8);
+  /* Couleur plus intense au survol */
+}
+
+
+/* Case rouge */
+.rouge {
+  background-color: rgba(218, 77, 77, 0.5);
+  /* Couleur rouge transparente */
+}
+
+.rouge:hover {
+  background-color: rgba(218, 77, 77, 0.8);
+  /* Couleur rouge transparente */
+}
+
+
+/* 3ème case dégradé */
+.carré:nth-child(3) {
+  background: linear-gradient(to bottom right, rgba(27, 27, 228, 0.5), rgba(218, 77, 77, 0.5));
+  /* Dégradé de bleu à rouge */
+}
+
+.carré:nth-child(3):hover {
+  background: linear-gradient(to bottom right, rgba(27, 27, 228, 0.5), rgba(218, 77, 77, 0.8));
+}
+
+
+
+
+/* ----------------------------------------------------------------------------- */
+
+/* Style de la fenêtre modale */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fond semi-transparent */
+}
+
+/* Style du contenu de la fenêtre modale */
+.modal-content {
+  background: linear-gradient(to bottom right, rgba(149, 224, 253, 0.6), rgba(0, 23, 49, 0.6));
+  /* Rouge vif et bleu foncé avec transparence */
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  /* Couleur du texte blanc */
+  font-family: 'Poetsen One';
+}
+
+/* Style du bouton de fermeture */
+.close {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ccc;
+}
+
+/* Style pour les listes déroulantes */
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #fff;
+  /* Bordure opaque */
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  font-size: 16px;
+  background-color: #fff;
+  /* Fond opaque */
+  color: #333;
+  /* Texte noir */
+  font-family: 'Poetsen One';
+}
+
+/* Style pour les labels */
+label {
+  font-size: 18px;
+  margin-bottom: 5px;
+  display: block;
+  font-family: 'Poetsen One';
+}
+
+/* Style pour le titre */
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+  font-family: 'Poetsen One';
+}
+
+/* Style pour le bouton */
+#trainButton {
+  background-color: #fff;
+  color: #333;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 0 auto;
+  font-family: 'Poetsen One';
+}
+
+#trainButton:hover {
+  background-color: #f2f2f2;
+}
+
+
+
+/* ----------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------- */
+
+/* Style de la fenêtre modale */
+.red-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fond semi-transparent */
+}
+
+/* Style du contenu de la fenêtre modale */
+.red-modal-content {
+  background: linear-gradient(to bottom right, rgba(241, 136, 136, 0.6), rgba(66, 1, 1, 0.6));
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  /* Couleur du texte blanc */
+  font-family: 'Poetsen One';
+}
+
+/* Style du bouton de fermeture */
+.red-close {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.red-close:hover {
+  color: #ccc;
+}
+
+/* Style pour les listes déroulantes */
+.red-warrior {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #fff;
+  /* Bordure opaque */
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  font-size: 16px;
+  background-color: #fff;
+  /* Fond opaque */
+  color: #333;
+  /* Texte noir */
+  font-family: 'Poetsen One';
+}
+
+/* Style pour les labels */
+label {
+  font-size: 18px;
+  margin-bottom: 5px;
+  display: block;
+  font-family: 'Poetsen One';
+}
+
+/* Style pour le titre */
+.red-modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+  font-family: 'Poetsen One';
+}
+
+/* Style pour le bouton */
+#red-trainButton {
+  background-color: #fff;
+  color: #333;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 0 auto;
+  font-family: 'Poetsen One';
+}
+
+#red-trainButton:hover {
+  background-color: #f2f2f2;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* Styles pour les guerriers */
+.guerrier {
+  width: 80px;
+  /* Taille des guerriers */
+  height: auto;
+  /* Hauteur automatique pour conserver les proportions */
+  position: absolute;
+  /* Position absolue pour les placer sur le plateau */
+  background: none;
+  /* Supprimer le fond des images */
+}
+
+/* Styles pour les guerriers bleus */
+.bleu {
+  top: 550px;
+  /* Position verticale pour le guerrier bleu */
+
+
+}
+
+/* Styles pour les guerriers rouges */
+.rouge {
+  top: 550px;
+  /* Position verticale pour le guerrier rouge */
+}
+
+/* Styles pour chaque joueur */
+.piste img:nth-child(1) {
+  left: 400px;
+  transform: scaleX(-1);
+}
+
+.piste img:nth-child(2) {
+  left: 480px;
+  transform: scaleX(-1);
+}
+
+.piste img:nth-child(3) {
+  left: 550px;
+  width: 150px;
+  top: 53%;
+}
+
+.piste img:nth-child(4) {
+  left: 700px;
+  width: 150px;
+  top: 53%;
+}
+
+.piste img:nth-child(5) {
+  right: 400px;
+}
+
+.piste img:nth-child(6) {
+  right: 480px;
+}
+
+.piste img:nth-child(7) {
+  right: 550px;
+  width: 180px;
+  top: 55%;
+}
+
+.piste img:nth-child(8) {
+  right: 700px;
+  width: 180px;
+  top: 55%;
+}
+
+/* Styles pour les chefs elfe et nain */
+.chefneinbleu,
+.chefelferouge {
+  width: 200px;
+  /* Largeur des chefs elfe et nain */
+}
+
+
+/* ----------------------------------------------------------------------------- */
+
+
+
+/* Styles pour les images des guerriers */
+.warrior-image {
+  width: 80px;
+  /* Remplacez 100px par la taille souhaitée en pixels */
+  height: 80px;
+  /* Remplacez 100px par la taille souhaitée en pixels */
+}
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+#startTourButton {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  background: linear-gradient(to bottom right, rgba(209, 34, 34, 0.6), rgba(1, 31, 66, 0.6));
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poetsen One';
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 20px;
+}
+
+#startTourButton:hover {
+  background-color: #0056b3;
+}
+
+#startTourButton:active {
+  background-color: #003d80;
+}
+
+/*--------------------------------------------------*/
+
+/* Styles pour le message affiché */
+#fight-message {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  display: block;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poetsen One';
+  font-size: 30px;
+  padding: 10px;
+  margin: 10px;
+}

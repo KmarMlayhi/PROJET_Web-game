@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>War of Faërun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="../images/icon.png" />
+  <link rel="stylesheet" href="../style/styles.css">
+  <script src="../modale.js"></script>
+  <script src="../utilities.js"></script>
+
+  <script src="../Chateau.js"></script>
+  <script src="../Guerrier.js"></script>
+  <script src="../Nain.js"></script>
+  <script src="../Elfe.js"></script>
+  <script src="../ChefNain.js"></script>
+  <script src="../ChefElfe.js"></script>
+  <script src="../main.js"></script>
+
+</head>
+
+<body>
+  <h1>War of Faërun</h1>
+  <div id="fight-message" style="display: none; font-size: 20px; color: rgb(255, 255, 255);"></div>
+  <div id="container-0" style="display: none;">
+    <div name="blue"></div>
+    <div name="red"></div>
+  </div>
+  <div class="plateau">
+    <div class="ligne">
+      <div class="carré bleu" id="container-1">
+        <div name="blue"></div>
+        <div name="red"></div>
+      </div>
+      <div class="carré bleu" id="container-2">
+        <div name="blue"></div>
+        <div name="red"></div>
+      </div>
+      <div class="carré bleu" id="container-3">
+        <div name="blue"></div>
+        <div name="red"></div>
+      </div>
+      <div class="carré bleu rouge" id="container-4">
+        <div name="blue"></div>
+        <div name="red"></div>
+      </div>
+      <div class="carré bleu rouge" id="container-5">
+        <div name="blue"></div>
+        <div name="red"></div>
+      </div>
+    </div>
+  </div>
+
+  <button id="startButton">START THE GAME</button>
+
+  <button id="BlueButton">
+    Blue Team
+  </button>
+
+  <button id="RedButton">
+    Red Team
+  </button>
+  <div id="content"></div>
+  <span id="listB"> </span>
+  <span id="listR">
+
+  </span>
+
+  <audio id="soundtrack" autoplay loop>
+    <source src="../sound/soundtrack.mp3" type="audio/mpeg">
+  </audio>
+  <img id="CutSound" src="../images/soundOff.png" alt="mutingthesong">
+
+  <!-------------------------------------------------------------------------------------->
+
+  <!--formulaire bleu-->
+  <div id="menu" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Choose Your Warriors Order</h2>
+      <span>
+        <p>Nain : 1 | </p>
+        <p>Elfe : 2 | </p>
+        <p>ChefNain : 3 | </p>
+        <p>ChefElfe : 4 </p>
+      </span>
+      <p></p>
+      <span>Ressources = 3</span>
+      <br>
+      <p></p>
+      <div class="options">
+        <div class="order-option">
+          <label for="blueWarrior1">Player 1 :</label>
+          <select id="blueWarrior1" class="blue-warrior" data-player="1">
+            <option value="Nain">Nain</option>
+            <option value="Elfe">Elfe</option>
+            <option value="Chef Nain">Chef Nain</option>
+            <option value="Chef Elfe">Chef Elfe</option>
+          </select>
+        </div>
+        <div class="order-option">
+          <label for="blueWarrior2">Player 2 :</label>
+          <select id="blueWarrior2" class="blue-warrior" data-player="2">
+            <option value="Nain">Nain</option>
+            <option value="Elfe">Elfe</option>
+            <option value="Chef Nain">Chef Nain</option>
+            <option value="Chef Elfe">Chef Elfe</option>
+          </select>
+        </div>
+        <div class="order-option">
+          <label for="blueWarrior3">Player 3 :</label>
+          <select id="blueWarrior3" class="blue-warrior" data-player="3">
+            <option value="Nain">Nain</option>
+            <option value="Elfe">Elfe</option>
+            <option value="Chef Nain">Chef Nain</option>
+            <option value="Chef Elfe">Chef Elfe</option>
+          </select>
+        </div>
+        <div class="order-option">
+          <label for="blueWarrior4">Player 4 :</label>
+          <select id="blueWarrior4" class="blue-warrior" data-player="4">
+            <option value="Nain">Nain</option>
+            <option value="Elfe">Elfe</option>
+            <option value="Chef Nain">Chef Nain</option>
+            <option value="Chef Elfe">Chef Elfe</option>
+          </select>
+        </div>
+      </div>
+      <button id="trainButton">TRAIN</button>
+    </div>
+  </div>
+
+
+  <!-------------------------------------------------------------------------------------->
+  <!--formulaire rouge-->
+  <div id="red-menu" class="red-modal">
+    <div class="red-modal-content">
+      <span class="red-close">&times;</span>
+      <h2>Choose Your Warriors Order</h2>
+      <span>
+        <p>Cost</p>
+        <p>Nain : 1 | </p>
+        <p>Elfe : 2 | </p>
+        <p>ChefNain : 3 | </p>
+        <p>ChefElfe : 4 <br></p>
+      </span>
+      <p></p>
+      <span>Ressources = 3</span>
+      <p></p>
+
+      <div class="red-options">
+        <div class="order-option">
+          <label for="redWarrior1">Player 1 :</label>
+          <select id="redWarrior1" class="red-warrior" data-player="1">
+            <option value="Nain">Nain</option>
+            <option value="Elfe">Elfe</option>
+            <option value="Chef Nain">Chef Nain</option>
+            <option value="Chef Elfe">Chef Elfe</option>
+          </select>
+        </div>
+        <div class="order-option">
+          <label for="redWarrior2">Player 2 :</label>
+          <select id="redWarrior2" class="red-warrior" data-player="2">
+            <option value="Nain">Nain</option>
+            <option value="Elfe">Elfe</option>
+            <option value="Chef Nain">Chef Nain</option>
+            <option value="Chef Elfe">Chef Elfe</option>
+          </select>
+        </div>
+        <div class="order-option">
+          <label for="redWarrior3">Player 3 :</label>
+          <select id="redWarrior3" class="red-warrior" data-player="3">
+            <option value="Nain">Nain</option>
+            <option value="Elfe">Elfe</option>
+            <option value="Chef Nain">Chef Nain</option>
+            <option value="Chef Elfe">Chef Elfe</option>
+          </select>
+        </div>
+        <div class="order-option">
+          <label for="redWarrior4">Player 4 :</label>
+          <select id="redWarrior4" class="red-warrior" data-player="4">
+            <option value="Nain">Nain</option>
+            <option value="Elfe">Elfe</option>
+            <option value="Chef Nain">Chef Nain</option>
+            <option value="Chef Elfe">Chef Elfe</option>
+          </select>
+        </div>
+      </div>
+      <button id="red-trainButton">TRAIN</button>
+    </div>
+  </div>
+
+  <!-------------------------------------------------------------------------------------->
+
+  <button id="startTourButton" style="display: none;">
+    Start Tour
+  </button>
+
+  <button id="Moveworriors_auto" style="display: none;">
+    Automatic
+  </button>
+
+
+</body>
+
+</html>
